@@ -1,9 +1,9 @@
 import React from 'react';
 import PT from 'prop-types';
-import { Link } from 'react-router-dom';
 
 import Header from '../../common/Header';
 import TextBlock from '../../common/TextBlock';
+import BackButton from '../../common/BackButton';
 
 class DetailView extends React.Component {
   constructor(props) {
@@ -33,11 +33,11 @@ class DetailView extends React.Component {
 
     return (
       <>
-        <Link to="/">Back</Link>
+        <BackButton />
         <Header title={subRedditData.display_name_prefixed} subTitle="Subreddit details" />
         <TextBlock title="Title" text={subRedditData.title} />
         <TextBlock title="Public description" text={subRedditData.public_description} />
-        <TextBlock title="Subscriber count" text={subRedditData.subscribers} />
+        <TextBlock title="Subscriber count" text={String(subRedditData.subscribers)} />
       </>
     );
   }
