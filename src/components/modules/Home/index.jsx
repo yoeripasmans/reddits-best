@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Header from '../../common/Header';
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -28,11 +30,8 @@ class Home extends React.Component {
     const { postData } = this.state;
 
     return (
-      <main>
-        <header>
-          <h1>Home</h1>
-          <h3>Top 10 posts</h3>
-        </header>
+      <>
+        <Header title="Home" subTitle="Top 10 posts" />
         <ul>
           {postData.map((postItem) =>
             <li key={postItem.data.id}>
@@ -41,11 +40,11 @@ class Home extends React.Component {
                 rel="noopener noreferrer"
                 href={`https://www.reddit.com${postItem.data.permalink}`}>{postItem.data.title}
               </a>
-              <Link to={`subreddit/${postItem.data.id}`}>{postItem.data.subreddit_name_prefixed}</Link>
+              <Link to={`subreddit/${postItem.data.subreddit}`}>{postItem.data.subreddit_name_prefixed}</Link>
             </li>
           )}
         </ul>
-      </main>
+      </>
     );
   }
 }
