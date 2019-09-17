@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import  { ReactComponent as BackIconSvg } from '../../../static/vectors/back.svg';
 
@@ -12,6 +12,7 @@ const StyledLink = styled(Link)`
   align-items: center;
   justify-content: space-between;
   width: 70px;
+  margin-bottom: 25px;
 `;
 
 const BackButton = () => {
