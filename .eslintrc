@@ -1,18 +1,9 @@
 {
   "extends": "react-app",
   "settings": {
-    "import/resolver": {
-      "webpack": { "config": "config/webpack.config.base.js" }
-    },
     "react": {
       "version": "latest"
     }
-  },
-  "globals": {
-    "__DEV__": false,
-    "__TEST__": false,
-    "__ACC__": false,
-    "__PROD__": false
   },
   "rules": {
     "array-bracket-spacing": ["error", "never"],
