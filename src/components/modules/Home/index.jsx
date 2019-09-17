@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 class Home extends React.Component {
   constructor(props) {
-   super(props);
-   this.state = {
+    super(props);
+    this.state = {
       postData: [],
       error: false,
       loading: false,
@@ -25,26 +25,28 @@ class Home extends React.Component {
   }
 
   render() {
-      return (
-        <main>
-          <header>
-            <h1>Home</h1>
-            <h3>Top 10 posts</h3>
-          </header>
-          <ul>
-            {this.state.postData.map((post) =>
-              <li key={post.data.id}>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={`https://www.reddit.com${post.data.permalink}`}>{post.data.title}
-                </a>
-                <Link to={`subreddit/${post.data.id}`}>{post.data.subreddit_name_prefixed}</Link>
-              </li>
-            )}
-          </ul>
-        </main>
-      );
+    const { postData } = this.state;
+
+    return (
+      <main>
+        <header>
+          <h1>Home</h1>
+          <h3>Top 10 posts</h3>
+        </header>
+        <ul>
+          {postData.map((postItem) =>
+            <li key={postItem.data.id}>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={`https://www.reddit.com${postItem.data.permalink}`}>{postItem.data.title}
+              </a>
+              <Link to={`subreddit/${postItem.data.id}`}>{postItem.data.subreddit_name_prefixed}</Link>
+            </li>
+          )}
+        </ul>
+      </main>
+    );
   }
 }
 
