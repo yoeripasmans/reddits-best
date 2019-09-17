@@ -1,10 +1,22 @@
 import React from 'react';
-import  { ReactComponent as BackIconSvg } from '../../../static/vectors/back.svg';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
-const BackButton = (props) => {
+import  { ReactComponent as BackIconSvg } from '../../../static/vectors/back.svg';
+
+const StyledLink = styled(Link)`
+  color: #4583C2;
+  font-size: 22px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70px;
+`;
+
+const BackButton = () => {
   return (
-    <Link to="/"><BackIconSvg /> Back</Link>
+    <StyledLink to="/"><BackIconSvg />Back</StyledLink>
   );
 };
 
