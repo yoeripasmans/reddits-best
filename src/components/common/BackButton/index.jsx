@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyledBackIconSvg, LinkText, StyledLink } from './styled.js';
+import { LinkText, StyledLink } from './styled.js';
+
+import { ReactComponent as BackIconSvg } from './../../../static/vectors/back.svg';
 
 const BackButton = () => {
   return (
     <StyledLink to="/">
-      <StyledBackIconSvg />
+      <BackIconSvg />
       <LinkText>Home</LinkText>
     </StyledLink>
   );

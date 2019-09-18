@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import  { ReactComponent as BackIconSvg } from './../../../static/vectors/back.svg';
-
-export const StyledBackIconSvg = styled(BackIconSvg)`
-`;
-
 export const LinkText = styled.span`
   margin-left: 12px;
   font-weight: bold;
