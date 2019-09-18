@@ -1,9 +1,14 @@
 import React from 'react';
 import PT from 'prop-types';
+import styled from 'styled-components';
 
 import Header from '../../common/Header';
 import TextBlock from '../../common/TextBlock';
 import BackButton from '../../common/BackButton';
+
+const TextBlockWrapper = styled.div`
+  margin-top: 82px;
+`;
 
 class DetailView extends React.Component {
   constructor(props) {
@@ -35,9 +40,11 @@ class DetailView extends React.Component {
       <>
         <BackButton />
         <Header title={subRedditData.display_name_prefixed} subTitle="Subreddit details" />
-        <TextBlock title="Title" text={subRedditData.title} />
-        <TextBlock title="Public description" text={subRedditData.public_description} />
-        <TextBlock title="Subscriber count" text={String(subRedditData.subscribers)} />
+        <TextBlockWrapper>
+          <TextBlock title="Title" text={subRedditData.title} />
+          <TextBlock title="Public description" text={subRedditData.public_description} />
+          <TextBlock title="Subscriber count" text={String(subRedditData.subscribers)} />
+        </TextBlockWrapper>
       </>
     );
   }

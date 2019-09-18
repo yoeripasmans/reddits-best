@@ -3,18 +3,20 @@ import { Link } from 'react-router-dom';
 
 export const ListWrapper = styled.ul`
   padding: 0;
-  margin: 30px 0;
+  margin: 38px 0;
 `;
 
 export const PostItem = styled.li`
   list-style-type: none;
-  margin: 20px 0;
+  margin: 24px 0;
   min-height: 121px;
   padding: 30px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border: 1px solid #E2E7EB;
+  border-radius: 4px;
 `;
 
 export const PostTitle = styled.a`

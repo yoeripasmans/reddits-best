@@ -22,7 +22,6 @@ body {
 }
 
 main {
-  max-width: 50rem;
-  margin: 5rem auto;
-  padding: 0 1rem;
+  max-width: 688px;
+  margin: 64px auto;
 }

@@ -12,7 +12,7 @@ const StyledLink = styled(Link)`
   align-items: center;
   justify-content: space-between;
   width: 70px;
-  margin-bottom: 25px;
+  margin-bottom: 33.5px;
 `;
 
 const BackButton = () => {
