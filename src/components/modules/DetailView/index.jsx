@@ -11,6 +11,8 @@ const TextBlockWrapper = styled.div`
   margin-top: 82px;
 `;
 
+const formatNumber = (num) => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
 class DetailView extends React.Component {
   constructor(props) {
     super(props);
@@ -46,7 +48,7 @@ class DetailView extends React.Component {
            <TextBlockWrapper>
              <TextBlock title="Title" text={subRedditData.title} />
              <TextBlock title="Public description" text={subRedditData.public_description} />
-             <TextBlock title="Subscriber count" text={String(subRedditData.subscribers)} />
+             <TextBlock title="Subscriber count" text={formatNumber(String(subRedditData.subscribers))} />
            </TextBlockWrapper>
          </>
       )}

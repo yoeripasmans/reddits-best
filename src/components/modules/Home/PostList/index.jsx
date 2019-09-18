@@ -10,6 +10,8 @@ import {
   PointsLabel,
 } from './styled';
 
+const formatNumber = (num) => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
 const PostList = ({ postData }) => {
   return (
     <ListWrapper>
@@ -22,7 +24,7 @@ const PostList = ({ postData }) => {
           </PostTitle>
           <div>
             <SubRedditLink to={`subreddit/${postItem.data.subreddit}`}>{postItem.data.subreddit_name_prefixed}</SubRedditLink>
-            <Points>· {postItem.data.score}</Points>
+            <Points>· {formatNumber(postItem.data.score)}</Points>
             <PointsLabel>Points</PointsLabel>
           </div>
         </PostItem>
