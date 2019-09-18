@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import  { ReactComponent as BackIconSvg } from '../../../static/vectors/back.svg';
+import  { ReactComponent as BackIconSvg } from './../../../static/vectors/back.svg';
 
 export const StyledBackIconSvg = styled(BackIconSvg)`
 `;
