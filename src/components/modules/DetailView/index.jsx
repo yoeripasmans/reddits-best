@@ -9,6 +9,10 @@ import Loader from '../../common/Loader';
 
 const TextBlockWrapper = styled.div`
   margin-top: 82px;
+
+  @media (max-width: 600px) {
+    margin-top: 48px;
+  }
 `;
 
 const formatNumber = (num) => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
