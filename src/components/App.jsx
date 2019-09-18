@@ -8,8 +8,8 @@ const App = () => {
   return (
     <main>
       <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/subreddit/:id" component={DetailView} />
+        <Route exact path="/" component={Home} />
+        <Route path="/subreddit/:id" component={DetailView} />
       </Switch>
     </main>
   );

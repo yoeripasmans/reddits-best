@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Header from '../../common/Header';
 import TextBlock from '../../common/TextBlock';
 import BackButton from '../../common/BackButton';
+import Loader from '../../common/Loader';
 
 const TextBlockWrapper = styled.div`
   margin-top: 82px;
@@ -34,17 +35,21 @@ class DetailView extends React.Component {
   }
 
   render() {
-    const { subRedditData } = this.state;
+    const { subRedditData, loading } = this.state;
 
     return (
       <>
-        <BackButton />
-        <Header title={subRedditData.display_name_prefixed} subTitle="Subreddit details" />
-        <TextBlockWrapper>
-          <TextBlock title="Title" text={subRedditData.title} />
-          <TextBlock title="Public description" text={subRedditData.public_description} />
-          <TextBlock title="Subscriber count" text={String(subRedditData.subscribers)} />
-        </TextBlockWrapper>
+      {loading ? <Loader /> : (
+         <>
+           <BackButton />
+           <Header title={subRedditData.display_name_prefixed} subTitle="Subreddit details" />
+           <TextBlockWrapper>
+             <TextBlock title="Title" text={subRedditData.title} />
+             <TextBlock title="Public description" text={subRedditData.public_description} />
+             <TextBlock title="Subscriber count" text={String(subRedditData.subscribers)} />
+           </TextBlockWrapper>
+         </>
+      )}
       </>
     );
   }
